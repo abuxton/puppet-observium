@@ -11,13 +11,16 @@
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
 class observium (
-  $package_name = $::observium::params::package_name,
-  $service_name = $::observium::params::service_name,
+  Boolean $install_repos  = $::observium::params::install_repos,
+  Boolean $install_epel   = $::observium::params::install_epel,
 ) inherits ::observium::params {
 
   # validate parameters here
 
-  class { '::observium::install': } ->
+  class { '::observium::install':
+        install_repos => $install_repos,
+        install_epel  => $install_epel,
+    } ->
   class { '::observium::config': } ~>
   class { '::observium::service': } ->
   Class['::observium']
