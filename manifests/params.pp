@@ -5,13 +5,9 @@
 #
 class observium::params {
   case $::osfamily {
-    'Debian': {
-      $package_name = 'observium'
-      $service_name = 'observium'
-    }
-    'RedHat', 'Amazon': {
-      $package_name = 'observium'
-      $service_name = 'observium'
+    'RedHat': {
+      $install_epel   = 'false'
+      $install_repos   = 'false'
     }
     default: {
       fail("${::operatingsystem} not supported")
