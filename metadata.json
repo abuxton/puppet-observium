@@ -8,10 +8,10 @@
   "project_page": "https://github.com/abuxton/puppet-observium",
   "issues_url": "https://github.com/abuxton/puppet-observium/issues",
   "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
-    }
+      { "name":"puppetlabs/stdlib","version_requirement":">= 3.2.0 < 5.0.0"},
+      { "name":"puppet/staging","version_requirement":">= 1.0.1 < 3.0.0"},
+      { "name":"puppet/php","version_requirement":">= 4.0.0"},
+
   ],
   "operatingsystem_support": [
     {
