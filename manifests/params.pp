@@ -6,8 +6,6 @@
 class observium::params {
   case $::osfamily {
     'RedHat': {
-      $install_epel   = 'false'
-      $install_repos   = 'false'
     }
     default: {
       fail("${::operatingsystem} not supported")

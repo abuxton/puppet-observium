@@ -3,14 +3,8 @@
 # This class is called from observium for install.
 #
 class observium::install (
-  $install_repos,
-  $install_epel,
+
   ){
-  if $install_repos {
-    class { '::observium::install::repos':
-      $install_epel  => $install_epel,
-    } ->
-  }
 
   class { 'staging':
   path  => '/tmp/staging',
