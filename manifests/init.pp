@@ -17,11 +17,12 @@ class observium (
 
   # validate parameters here
 
-  class { "::observium::install"  :
-    install_version => $install_version,
+  class { '::observium::install' :
+    install_version  => $install_version,
     install_location => $install_location,
-    } ->
-  class { '::observium::config' :
-    } ~>
-  Class['::observium']
+    }
+    ->  class { '::observium::config' :
+    install_location => $install_location,
+    }
+    ~>  Class['::observium']
 }

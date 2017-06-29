@@ -11,7 +11,6 @@ class observium::params {
 
   case $::osfamily {
     'RedHat': {
-      
     }
     default: {
       fail("${::operatingsystem} not supported")

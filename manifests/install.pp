@@ -7,17 +7,17 @@ class observium::install (
   # resources
 
   class { '::observium::install::packages' :
-    } ->
-  class { "::observium::install::${install_version}"  :
-    install_location => $install_location,
-    } ->
-  class { '::observium::install::logs'  :
-    install_location => $install_location,
-    } ->
-  class { '::observium::install::rrdtool' :
-    install_location => $install_location,
-    } ->
-  class { '::observium::install::db'  :
-    install_location => $install_location,
+    }
+  ->  class { "::observium::install::${install_version}"  :
+        install_location => $install_location,
+      }
+  ->  class { '::observium::install::logs'  :
+        install_location => $install_location,
+      }
+  ->  class { '::observium::install::rrdtool' :
+        install_location => $install_location,
+      }
+  ->  class { '::observium::install::db'  :
+        install_location => $install_location,
       }
 }
