@@ -2,7 +2,7 @@
 # wget.x86_64 httpd.x86_64 cronie.x86_64 net-snmp.x86_64 \
 # net-snmp-utils.x86_64 fping.x86_64 mariadb-server.x86_64 mariadb.x86_64 MySQL-python.x86_64 \
 # rrdtool.x86_64 subversion.x86_64 jwhois.x86_64 ipmitool.x86_64 graphviz.x86_64 ImageMagick.x86_64
-class observium::install::packages{
+class observium::install::packages  {
 $required_packages = [
                       'php-json',
                       'php-gd',
@@ -23,10 +23,10 @@ $required_packages = [
                       'libvirt',
                       ]
 
-  $required_packages.each |$package_name| {
+  $required_packages.each |$package| {
     if !defined (Package['$package_name']) {
-      package{$package_names:
-        ensure => installed
+      package{  $package  :
+        ensure => installed,
       }
     }
   }

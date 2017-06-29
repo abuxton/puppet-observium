@@ -5,14 +5,14 @@ class observium::install (
   )inherits observium::params {
   # resources
 
-  class {'observium::install::packages':
+  class { '::observium::install::packages' :
     } ->
-  class { 'observium::install::db':
+  class { '::observium::install::$install_version'  :
     } ->
-  class { "::observium::install::$install_version":
+  class { '::observium::install::logs'  :
     } ->
-  class { 'observium::install::logs':
+  class { '::observium::install::rrdtool' :
     } ->
-  class { 'observium::install::rrdtool':
-    } 
+  class { '::observium::install::db'  :
+      }
 }
