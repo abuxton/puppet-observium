@@ -1,7 +1,7 @@
 # == Class: observium::install
 #
 class observium::install (
-  $install_version = $observium::params::install_version
+  $install_version = $observium::params::install_version,
   $install_location = $install_location,
   )inherits observium::params {
   # resources
