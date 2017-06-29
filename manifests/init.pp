@@ -12,12 +12,14 @@
 #
 class observium (
   $install_version = $observium::params::install_version,
+  $install_location = $observium::params::install_location,
 ) inherits ::observium::params {
 
   # validate parameters here
 
   class { "::observium::install"  :
     install_version => $install_version,
+    install_location => $install_location,
     } ->
   class { '::observium::config' :
     } ~>

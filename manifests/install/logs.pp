@@ -1,8 +1,8 @@
 class observium::install::logs(
-
+    $install_location = $observium::params::install_location
   )inherits observium::params{
 
-  file{ '/opt/observium/logs' :
+  file{ "${install_location}/logs" :
     ensure  => directory,
     owner   => 'www-data',
     group   => 'www-data',
@@ -10,6 +10,6 @@ class observium::install::logs(
 
   file{ '/var/log/observium'  :
     ensure  => link,
-    target  => '/opt/observium/logs',
+    target  => "${install_location}/logs",
   }
 }
