@@ -5,7 +5,7 @@ class observium::install::db(
   ) inherits observium::params{
     mysql::db { 'observium':
     user     => $dbuser,
-    password => $dbpassword',
+    password => $dbpassword,
     host     => 'localhost',
     grant    => ['ALL'],
 }
