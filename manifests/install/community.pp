@@ -7,13 +7,13 @@ class observium::install::community (
   ) inherits observium::params {
 
   include ::staging
-
+if !defined(Class['staging']){
   class { 'staging' :
     path  => '/tmp/staging',
     owner => 'puppet',
     group => 'puppet',
   }
-
+}
   staging::file { 'observium-community-latest.tar.gz' :
     source => 'http://www.observium.org/observium-community-latest.tar.gz',
   }
