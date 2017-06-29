@@ -11,6 +11,6 @@ class observium::install::db(
     exec{ '/opt/observium/discovery.php -u >> /opt/observium/logs/db-install.log 2 > &1'  :
       path    => '/usr/bin:/bin',
       creates => '/opt/observium/logs/db-install.log',
-      require => Mysql::Db'observium'],
+      require => Mysql::Db['observium'],
     }
 }
