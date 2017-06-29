@@ -12,5 +12,7 @@ class observium::install (
   class { "::observium::install::$install_version":
     } ->
   class { 'observium::install::logs':
+    } ->
+  class { 'observium::install::rrdtool':
     } 
 }

@@ -14,7 +14,6 @@ $required_packages = [
                       'net-snmp-utils',
                       'graphviz',
                       'subversion',
-                      'rrdtool',
                       'ImageMagick',
                       'jwhois',
                       'nmap',
@@ -27,7 +26,7 @@ $required_packages = [
   $required_packages.each |$package_name| {
     if !defined (Package['$package_name']) {
       package{$package_names:
-        ensure => present
+        ensure => installed
       }
     }
   }
