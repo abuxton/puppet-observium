@@ -7,10 +7,11 @@ class observium::params {
   $install_version  = 'community'
   $dbuser           = 'observium'
   $dbpassword       = 'observium'
-  $install_location  = '/opt/observium'
+  $install_location = '/opt/observium'
+
   case $::osfamily {
     'RedHat': {
-
+      
     }
     default: {
       fail("${::operatingsystem} not supported")
