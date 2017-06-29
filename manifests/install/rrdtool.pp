@@ -1,7 +1,7 @@
 # == Class: observium::install::rrdtool
 #
 class observium::install::rrdtool (
-  $install_location = $::observium::params::install_location
+  $install_location = $::observium::params::install_location,
   ) inherits observium::params {
   # resources
   if !defined(Package['rrdtool']){
