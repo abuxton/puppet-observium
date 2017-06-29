@@ -7,7 +7,7 @@ class observium::install (
 
   class { '::observium::install::packages' :
     } ->
-  class { '::observium::install::$install_version'  :
+  class { "::observium::install::${install_version}"  :
     } ->
   class { '::observium::install::logs'  :
     } ->
