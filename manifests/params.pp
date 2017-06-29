@@ -4,8 +4,10 @@
 # It sets variables according to platform.
 #
 class observium::params {
+  $install_version = 'community'
   case $::osfamily {
     'RedHat': {
+
     }
     default: {
       fail("${::operatingsystem} not supported")

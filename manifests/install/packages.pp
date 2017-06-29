@@ -4,21 +4,32 @@
 # rrdtool.x86_64 subversion.x86_64 jwhois.x86_64 ipmitool.x86_64 graphviz.x86_64 ImageMagick.x86_64
 class observium::install::packages{
 $required_packages = [
-  'wget',
-  'cronie',
-  'net-snmp',
-  'net-snmp-utils',
-  'fping',
-  'rrdtool',
-  'jwhois',
-  'ipmitool',
-  'graphviz',
-  'ImageMagick',
-]
-  Package {
+                      'php-json',
+                      'php-gd',
+                      'php-snmp',
+                      'vixie-cron',
+                      'php-mcrypt',
+                      'php-pear',
+                      'net-snmp',
+                      'net-snmp-utils',
+                      'graphviz',
+                      'subversion',
+                      'rrdtool',
+                      'ImageMagick',
+                      'jwhois',
+                      'nmap',
+                      'ipmitool',
+                      'php-pear.noarch',
+                      'MySQL-python',
+                      'libvirt',
+                      ]
 
+  $required_packages.each |$package_name| {
+    if !defined (Package['$package_name']) {
+      package{$package_names:
+        ensure => present
+      }
+    }
   }
-  package{$required_packages:
-    ensure => present
-  }
+
 }
