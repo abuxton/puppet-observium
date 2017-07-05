@@ -9,8 +9,8 @@ class observium::install::community (
   if !defined(Class['::staging']){
     class{ '::staging' :
       path  => '/tmp/staging',
-      owner => 'puppet',
-      group => 'puppet',
+      owner => 'pe-puppet',
+      group => 'pe-puppet',
     }
   }
   staging::file{ 'observium-community-latest.tar.gz' :
