@@ -3,7 +3,7 @@
 # This class is called from observium for service config.
 #
 class observium::config (
-    $observium::config::install_location = $::observium::params::install_location,
+    $install_location = $::observium::params::install_location,
   ) inherits observium::params {
   include ::observium::install
   file {  "${observium::config::install_location}/config.php" :
