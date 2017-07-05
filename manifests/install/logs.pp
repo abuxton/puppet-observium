@@ -5,8 +5,8 @@ class observium::install::logs(
 
   file{ "${install_location}/logs" :
     ensure => directory,
-    owner  => 'www-data',
-    group  => 'www-data',
+    owner  => 'apache',
+    group  => 'apache',
     }
 
   file{ '/var/log/observium'  :
